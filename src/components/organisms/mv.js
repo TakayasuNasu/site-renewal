@@ -133,9 +133,7 @@ class MV extends Component {
           <Section
             as='section'
             columns={this.state.column}
-            columnsMd={this.state.column}
             rows={this.state.row}
-            rowsMd={this.state.row}
             areas={this.state.area}>
             <Container />
           </Section>

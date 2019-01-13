@@ -16,12 +16,6 @@ export const Grid = styled.div`
   grid-template-columns: ${({ columns }) => columns.join(" ")};
   -ms-grid-rows: ${({ rows }) => rows.map(vw).join(" ")};
   grid-template-rows: ${({ rows }) => rows.map(vw).join(" ")};
-  ${breakpoint('md')`
-    -ms-grid-columns: ${({ columnsMd }) => columnsMd.join(" ")};
-    grid-template-columns: ${({ columnsMd }) => columnsMd.join(" ")};
-    -ms-grid-rows: ${({ rowsMd }) => rowsMd.join(" ")};
-    grid-template-rows: ${({ rowsMd }) => rowsMd.join(" ")};
-  `}
   grid-template-areas: ${({ areas }) =>
     areas.map(r => `'${r.join(" ")}'`).join(" ")};
   width: 100%;
