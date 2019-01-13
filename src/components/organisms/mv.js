@@ -28,9 +28,9 @@ const Div = styled.div`
 const About = styled.div`
   margin-left: auto;
   margin-right: auto;
-  padding-top: ${VW(80)};
+  padding-top: ${VW(160)};
   ${breakpoint('md')`
-    padding-top: 34em;
+    padding-top: 20em;
   `}
   width: 95%;
   ${breakpoint('md')`
