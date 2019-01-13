@@ -1,0 +1,59 @@
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, address, code,
+em, img,
+small, strong, sub, sup,
+b, u, i,
+dl, dt, dd, ol, ul, li,
+form, label,
+table, caption, tbody, tr, th, td,
+article, aside, canvas,
+figure, figcaption, footer, header,
+main, menu, nav, section,
+audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+    display: none;
+}
+html {
+	font-size: calc(100vw / 75);
+}
+@media only screen and (min-width: 768px) {
+  html {
+		font-size: 62.5%;
+	}
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}

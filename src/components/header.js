@@ -1,0 +1,44 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+
+import H1 from '../components/atoms/headline/h1'
+import ContactButton from '../components/atoms/buttons/contact'
+import MenuButon from '../components/atoms/buttons/menu'
+import { VW } from './style-utils'
+
+const Wrapper = styled.div`
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  background-color: rgba(255,255,255,0.8);
+`
+
+const HeaderBlock = styled.header`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: ${VW(10)};
+  padding-right: ${VW(10)};
+  height: ${VW(70)};
+  ${breakpoint('md')`
+    height: 70px;
+  `}
+`
+
+const Header = () => (
+  <Wrapper>
+    <HeaderBlock>
+      <H1 ps={2.4}>@TakayasuNasu</H1>
+      <ContactButton>contact</ContactButton>
+      <MenuButon />
+    </HeaderBlock>
+  </Wrapper>
+)
+
+Header.propTypes = {
+  siteTitle: PropTypes.string,
+}
+
+export default Header
