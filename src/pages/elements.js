@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Slider, { Range } from 'rc-slider';
+import 'rc-slider/assets/index.css';
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -32,6 +34,7 @@ const Elements = () => (
         <DT>Email</DT>
         <DD>taka.beckham@gmail.com</DD>
       </DL>
+      <Slider trackStyle={{ backgroundColor: 'black' }} handleStyle={{ backgroundColor: 'black', borderColor: 'black' }} />
       <Link to="/">Go back to the homepage</Link>
     </WrapperL>
   </Layout>
