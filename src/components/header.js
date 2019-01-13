@@ -19,10 +19,12 @@ const HeaderBlock = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: ${VW(10)};
-  padding-right: ${VW(10)};
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 95%;
   height: ${VW(70)};
   ${breakpoint('md')`
+    max-width: 960px;
     height: 70px;
   `}
 `
