@@ -5,11 +5,13 @@ import Layout from '../components/layout'
 import Image from '../components/image'
 import SEO from '../components/seo'
 import MV from '../components/organisms/mv'
+import Skills from '../components/organisms/blocks/skills'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <MV />
+    <Skills />
     <h1>Hi people who are you?</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>

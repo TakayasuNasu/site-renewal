@@ -21,7 +21,7 @@ const HeaderBlock = styled.header`
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
-  max-width: 95%;
+  width: 95%;
   height: ${VW(70)};
   ${breakpoint('md')`
     max-width: 960px;
