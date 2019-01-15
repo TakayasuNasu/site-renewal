@@ -72,7 +72,17 @@ const Article = styled.article`
     -ms-grid-column-span: 2;
     grid-column: 2 / 4;
   }
-
+  div{
+    &:nth-of-type(1){
+      grid-column: 1 / 5;
+    }
+    &:nth-of-type(5){
+      grid-column: 1 / 5;
+    }
+    &:nth-of-type(8){
+      grid-column: 1 / 5;
+    }
+  }
   p{
     font-size: 3.2rem;
     ${breakpoint('md')`
@@ -88,35 +98,35 @@ const Profile = () => (
     <H3>What I do</H3>
     <Section>
       <Article>
-        <div /><div /><div /><div /><div />
+        <div /><div />
         <FaCode color='#2879ff' />
-        <div /><div /><div /><div /><div /><div /><div />
+        <div /><div /><div /><div />
         <H4 ss={1.8} ps={1.8}>User interface</H4>
-        <div /><div /><div /><div /><div />
+        <div /><div />
         <p>A mobile first responsive template with material design.</p>
       </Article>
       <Article>
-        <div /><div /><div /><div /><div />
+        <div /><div />
         <TiDeviceLaptop color='#01c853' />
-        <div /><div /><div /><div /><div /><div /><div />
+        <div /><div /><div /><div />
         <H4 ss={1.8} ps={1.8}>Branding</H4>
-        <div /><div /><div /><div /><div />
+        <div /><div />
         <p>A mobile first responsive template with material design.</p>
       </Article>
       <Article>
-        <div /><div /><div /><div /><div />
+        <div /><div />
         <TiEdit color='#7C4DFF' />
-        <div /><div /><div /><div /><div /><div /><div />
+        <div /><div /><div /><div />
         <H4 ss={1.8} ps={1.8}>UCommunication</H4>
-        <div /><div /><div /><div /><div />
+        <div /><div />
         <p>A mobile first responsive template with material design.</p>
       </Article>
       <Article>
-        <div /><div /><div /><div /><div />
+        <div /><div />
         <TiHtml5 color='orange' />
-        <div /><div /><div /><div /><div /><div /><div />
+        <div /><div /><div /><div />
         <H4 ss={1.8} ps={1.8}>Strategy</H4>
-        <div /><div /><div /><div /><div />
+        <div /><div />
         <p>A mobile first responsive template with material design.</p>
       </Article>
     </Section>
