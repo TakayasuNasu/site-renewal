@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
+import { TiNews, TiDeviceLaptop, TiEdit, TiHtml5 } from "react-icons/ti";
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -17,6 +18,7 @@ import DL from '../components/atoms/list/dl'
 import DT from '../components/atoms/list/terms'
 import DD from '../components/atoms/list/description'
 import SNS from '../components/organisms/blocks/sns'
+import CircleIcon from '../components/atoms/icon/circle'
 
 const Elements = () => (
   <Layout>
@@ -37,6 +39,12 @@ const Elements = () => (
         <DD>taka.beckham@gmail.com</DD>
       </DL>
       <Slider trackStyle={{ backgroundColor: 'black' }} handleStyle={{ backgroundColor: 'black', borderColor: 'black' }} />
+      <ul>
+        <li><CircleIcon><TiNews /></CircleIcon></li>
+        <li><CircleIcon><TiDeviceLaptop /></CircleIcon></li>
+        <li><CircleIcon><TiEdit /></CircleIcon></li>
+        <li><CircleIcon><TiHtml5 /></CircleIcon></li>
+      </ul>
       <Link to="/">Go back to the homepage</Link>
     </WrapperL>
   </Layout>
