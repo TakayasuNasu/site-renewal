@@ -8,10 +8,6 @@ import H4 from '../../atoms/headline/h4'
 import { VW } from '../../style-utils'
 
 const Wrapper = styled.div`
-  padding-bottom: ${VW(80)};
-  ${breakpoint('md')`
-    padding-bottom: 80px;
-  `}
   background: linear-gradient(to bottom, rgb(255,255,255) 0%,rgb(238,238,238) 100%);
 `
 

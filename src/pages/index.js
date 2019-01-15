@@ -6,12 +6,14 @@ import Image from '../components/image'
 import SEO from '../components/seo'
 import MV from '../components/organisms/mv'
 import Skills from '../components/organisms/blocks/skills'
+import Profile from '../components/organisms/blocks/profile'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <MV />
     <Skills />
+    <Profile />
     <h1>Hi people who are you?</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
