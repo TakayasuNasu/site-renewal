@@ -7,6 +7,7 @@ import SEO from '../components/seo'
 import MV from '../components/organisms/mv'
 import Skills from '../components/organisms/blocks/skills'
 import Profile from '../components/organisms/blocks/profile'
+import Timeline from '../components/organisms/blocks/timeline'
 
 const IndexPage = () => (
   <Layout>
@@ -14,6 +15,7 @@ const IndexPage = () => (
     <MV />
     <Skills />
     <Profile />
+    <Timeline />
     <h1>Hi people who are you?</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>

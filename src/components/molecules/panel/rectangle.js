@@ -23,7 +23,12 @@ const Div = styled.div`
   ${breakpoint('md')`
     width: calc(100% - 50px);
   `}
-  border-top: ${VW(3)} solid #2879ff;
+  background-color: #ffffff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.03), 0 3px 1px -2px rgba(0, 0, 0, 0.03), 0 1px 5px 0 rgba(0, 0, 0, 0.03);
+  border-top: ${VW(3)} solid ${props => props.borderColor || '#2879ff'};
+  ${breakpoint('md')`
+    border-top: 3px solid ${props => props.borderColor || '#2879ff'};
+  `}
   .area01{
     grid-column: 1 / 4;
   }
@@ -38,10 +43,21 @@ const Div = styled.div`
     border-style: solid;
     border-width: 13px 0 13px 13px;
   }
+  &:after {
+    content: " ";
+    position: absolute;
+    display: inline-block;
+    top: 30px;
+    right: -10px;
+    border-top: 10px solid transparent;
+    border-left: 10px solid #ffffff;
+    border-right: 0 solid #ffffff;
+    border-bottom: 10px solid transparent;
+  }
 `
 
 const Rectangle = props => (
-  <Div>
+  <Div borderColor={props.borderColor}>
     <div className='area01' />
     <div />
     <div>
