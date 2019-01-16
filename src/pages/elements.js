@@ -19,6 +19,7 @@ import DT from '../components/atoms/list/terms'
 import DD from '../components/atoms/list/description'
 import SNS from '../components/organisms/blocks/sns'
 import CircleIcon from '../components/atoms/icon/circle'
+import Rectangle from '../components/molecules/panel/rectangle'
 
 const Elements = () => (
   <Layout>
@@ -45,6 +46,7 @@ const Elements = () => (
         <li><CircleIcon><TiEdit /></CircleIcon></li>
         <li><CircleIcon><TiHtml5 /></CircleIcon></li>
       </ul>
+      <Rectangle><H4>UI/UX Designer</H4></Rectangle>
       <Link to="/">Go back to the homepage</Link>
     </WrapperL>
   </Layout>
