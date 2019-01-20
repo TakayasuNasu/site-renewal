@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import { VW } from '../../style-utils'
-import Circle from '../../atoms/icon/circle'
 
 
 const Div = styled.div`
@@ -37,8 +36,21 @@ const Div = styled.div`
     display: inline-block;
     opacity: 0.2;
     position: absolute;
-    top: 27px;
-    right: -13px;
+    top: ${VW(28)};
+    left: ${VW(-12)};
+    ${breakpoint('md')`
+      top: 28px;
+      ${props => {
+      if (props.isLeft) {
+        return `
+        left: auto;
+        right: -13px;
+      `} else {
+        return `
+          left: -12px;
+        `}
+    }}
+    `}
     border-color: transparent rgba(0, 0, 0, 0.1);
     border-style: solid;
     border-width: 13px 0 13px 13px;
@@ -47,23 +59,44 @@ const Div = styled.div`
     content: " ";
     position: absolute;
     display: inline-block;
-    top: 30px;
-    right: -10px;
+    top: ${VW(28)};
+    left: ${VW(-10)};
+    ${breakpoint('md')`
+      top: 30px;
+      ${props => {
+      if (props.isLeft) {
+        return `
+          left: auto;
+          right: -10px;
+        `} else {
+        return `
+            left: -10px;
+          `}
+    }}
+    `}
     border-top: 10px solid transparent;
-    border-left: 10px solid #ffffff;
-    border-right: 0 solid #ffffff;
+    border-left: 0 solid #ffffff;
+    border-right: 10px solid #ffffff;
     border-bottom: 10px solid transparent;
+    ${breakpoint('md')`
+    ${props => {
+      if (props.isLeft) {
+        return `
+        border-left: 10px solid #ffffff;
+        border-right: 0 solid #ffffff;
+      `}
+    }}
+    `}
   }
 `
 
 const Rectangle = props => (
-  <Div borderColor={props.borderColor}>
+  <Div borderColor={props.borderColor} isLeft={props.isLeft}>
     <div className='area01' />
     <div />
     <div>
       {props.children}
     </div>
-
   </Div>
 )
 
