@@ -58,7 +58,6 @@ const Article = styled.article`
     margin-top: 30px;
   `}
   ${breakpoint('md')`
-    width: 95%;
     max-width: 450px;
   `}
   background-color: #ffffff;
