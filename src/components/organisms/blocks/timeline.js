@@ -51,10 +51,10 @@ const LI = styled.li`
   &+li{
     margin-top: ${VW(20)};
     ${breakpoint('md')`
-      margin-top: 20px;
+      margin-top: -80px;
     `}
   }
-  div{
+  >div{
     &:nth-of-type(1) {
       margin-top: ${VW(22)};
       ${breakpoint('md')`
@@ -80,25 +80,69 @@ const RightLI = styled(LI)`
   }
 `
 
+const Grid = styled.main`
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+  grid-template-columns: 100%;
+  -ms-grid-rows: ${VW(32)} ${VW(10)} ${VW(24)} ${VW(10)} ${VW(24)} ${VW(30)} auto;
+  grid-template-rows: ${VW(32)} ${VW(10)} ${VW(24)} ${VW(10)} ${VW(24)} ${VW(30)} auto;
+  ${breakpoint('md')`
+    -ms-grid-rows: 32px 10px 24px 10px 24px 30px auto;
+    grid-template-rows: 32px 10px 24px 10px 24px 30px auto;
+  `}
+  p{
+    font-size: 3.2rem;
+    ${breakpoint('md')`
+      font-size: 1.6rem;
+    `}
+    line-height: 1.6;
+  }
+`
+
 const Timeline = () => (
   <Section>
     <UL>
       <LI>
-        <CircleIcon><TiDeviceLaptop /></CircleIcon>
+        <CircleIcon color='#2879ff'><TiDeviceLaptop /></CircleIcon>
         <Rectangle isLeft={true}>
-          <H4>Senior Software Engineer</H4>
+          <Grid>
+            <H3>Senior Software Engineer</H3>
+            <div />
+            <p>Mar 2014 - Present</p>
+            <div />
+            <p>Fakebook</p>
+            <div />
+            <p>Invitamus me testatur sed quod non dum animae tuae lacrimis ut libertatem deum rogus aegritudinis causet. Dicens hoc contra serpentibus isto.</p>
+          </Grid>
         </Rectangle>
       </LI>
       <RightLI>
-        <CircleIcon><TiDeviceLaptop /></CircleIcon>
-        <Rectangle>
-          <H4>Senior Software Engineer</H4>
+        <CircleIcon color='#01c853'><TiDeviceLaptop /></CircleIcon>
+        <Rectangle borderColor='#01c853'>
+          <Grid>
+            <H3>Senior Software Engineer</H3>
+            <div />
+            <p>Mar 2014 - Present</p>
+            <div />
+            <p>Fakebook</p>
+            <div />
+            <p>Invitamus me testatur sed quod non dum animae tuae lacrimis ut libertatem deum rogus aegritudinis causet. Dicens hoc contra serpentibus isto.</p>
+          </Grid>
         </Rectangle>
       </RightLI>
       <LI>
-        <CircleIcon><TiDeviceLaptop /></CircleIcon>
-        <Rectangle isLeft={true}>
-          <H4>Senior Software Engineer</H4>
+        <CircleIcon color='#fec107'><TiDeviceLaptop /></CircleIcon>
+        <Rectangle borderColor='#fec107' isLeft={true}>
+          <Grid>
+            <H3>Senior Software Engineer</H3>
+            <div />
+            <p>Mar 2014 - Present</p>
+            <div />
+            <p>Fakebook</p>
+            <div />
+            <p>Invitamus me testatur sed quod non dum animae tuae lacrimis ut libertatem deum rogus aegritudinis causet. Dicens hoc contra serpentibus isto.</p>
+          </Grid>
         </Rectangle>
       </LI>
     </UL>

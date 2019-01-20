@@ -20,11 +20,12 @@ const Div = styled.div`
   * {
     width: 64%;
     height: 64%;
+    color: ${props => props.color || '#010101'};
   }
 `
 
 const CircleIcon = props => (
-  <Div>{props.children}</Div>
+  <Div color={props.color}>{props.children}</Div>
 )
 
 export default CircleIcon
