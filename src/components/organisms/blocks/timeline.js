@@ -3,15 +3,16 @@ import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import { TiDeviceLaptop, TiEdit, TiHtml5 } from "react-icons/ti";
 import H3 from '../../atoms/headline/h3'
-import H4 from '../../atoms/headline/h4'
 import Rectangle from '../../molecules/panel/rectangle'
 import CircleIcon from '../../atoms/icon/circle'
 import { VW } from '../../style-utils'
 
 const Section = styled.section`
   padding-top: ${VW(80)};
+  padding-bottom: ${VW(60)};
   ${breakpoint('md')`
     padding-top: 80px;
+    padding-bottom: 60px;
   `}
   background-color: rgb(238,238,238);
 `

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled, { ThemeProvider } from 'styled-components';
 
 import Header from './header'
+import Footer from './footer'
 import { theme } from './themes'
 import { Grid, GridArea } from './atoms/styles'
 import './layout.css'
@@ -41,10 +42,10 @@ class Layout extends Component {
 
   getRow() {
     if (window.matchMedia("(max-width:766px)").matches) {
-      return [70, 'auto', 70]
+      return [70, 'auto', 'auto']
     }
     if (window.matchMedia("(min-width:767px)").matches) {
-      return ['70px', 'auto', '70px']
+      return ['70px', 'auto', 'auto']
     }
   }
 
@@ -72,9 +73,7 @@ class Layout extends Component {
             </Outer>
           </GridArea>
           <GridArea name='footer'>
-            <footer>
-              Footer
-            </footer>
+            <Footer />
           </GridArea>
         </Grid>
       </ThemeProvider>
