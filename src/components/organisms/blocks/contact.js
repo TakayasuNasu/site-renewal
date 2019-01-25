@@ -38,13 +38,91 @@ const Form = styled.form`
   `}
 `
 
+const Textfield = styled.div`
+  position: relative;
+`
+
+const input = styled.input`
+  box-sizing: border-box;
+  display: block;
+  padding: 0.125rem 0.125rem 0.0625rem;
+  width: 100%;
+  font-size: 3.6rem;
+  line-height: 1.9;
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+  border-bottom:1px solid #757575;
+  transition: all 0.28s ease;
+  &:focus{
+    outline: none;
+  }
+  &:focus, &:valid{
+    ~ label{
+      top: ${VW(-20)};
+      font-size: 3rem;
+      color:#5264AE;
+    }
+  }
+`
+
+const InputName = styled(input)`
+`
+
+const Highlight = styled.span`
+  position:absolute;
+  height:60%;
+  width:100px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+`
+
+const Bar = styled.span`
+  display:block;
+  position:relative;
+  width:300px;
+  &::before, &::after{
+    content:'';
+    height:2px;
+    width:0;
+    bottom:1px;
+    position:absolute;
+    background:#5264AE;
+    transition:0.2s ease all;
+  }
+  &::before{
+    left: 50%;
+  }
+  &::after{
+    right: 50%;
+  }
+`
+
+const Label = styled.label`
+  position:absolute;
+  color:#999;
+  font-size: 3.6rem;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+`
+
 const Contact = () => (
   <Section>
     <H3>Contact</H3>
     <Div>
       <H4>Hey There, happy to hear from you.</H4>
       <Form>
-
+        <div />
+        <Textfield>
+          <InputName type="text" name="name" required="required" />
+          <Highlight />
+          <Bar />
+          <Label>Name*</Label>
+        </Textfield>
       </Form>
     </Div>
   </Section>
