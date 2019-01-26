@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
-import { TiDeviceLaptop, TiEdit, TiHtml5 } from "react-icons/ti";
+import { TiDeviceLaptop } from "react-icons/ti";
 import H3 from '../../atoms/headline/h3'
 import Rectangle from '../../molecules/panel/rectangle'
 import CircleIcon from '../../atoms/icon/circle'

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import H3 from '../../atoms/headline/h3'
 import H4 from '../../atoms/headline/h4'
+import Submit from '../../atoms/buttons/contact'
 import { VW } from '../../style-utils'
 
 const Section = styled.section`
@@ -28,9 +29,9 @@ const Div = styled.div`
 const Form = styled.form`
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: ${VW(20)} ${VW(36)} ${VW(40)} ${VW(36)} ${VW(40)} ${VW(120)} ${VW(20)} ${VW(80)} ${VW(30)} ${VW(40)};
+  grid-template-rows: ${VW(20)} ${VW(36)} ${VW(40)} ${VW(36)} ${VW(40)} ${VW(120)} ${VW(40)} ${VW(40)};
   ${breakpoint('md')`
-    grid-template-rows: 20px 72px 60px 72px 60px 200px 20px 80px 30px 40px;
+    grid-template-rows: 20px 72px 60px 72px 60px 200px 60px 40px;
   `}
   margin-top: ${VW(30)};
   ${breakpoint('md')`
@@ -144,6 +145,8 @@ const Contact = () => (
           <Bar />
           <Label>Message*</Label>
         </Textfield>
+        <div />
+        <Submit pw={90} ph={40} bg="#2879ff">submit</Submit>
       </Form>
     </Div>
   </Section>
