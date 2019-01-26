@@ -16,9 +16,9 @@ const Section = styled.section`
   ${breakpoint('md')`
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (450px)[2];
-    grid-template-columns: repeat(2, 450px);
-    justify-content: space-between;
+    -ms-grid-columns: (50%)[2];
+    grid-template-columns: repeat(2, 50%);
+    justify-items: center;
   `}
   margin-top: ${VW(80)};
   ${breakpoint('md')`

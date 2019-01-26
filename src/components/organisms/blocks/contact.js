@@ -46,7 +46,10 @@ const Textfield = styled.div`
 const Input = styled.input`
   padding: 0.125rem 0.125rem 0.0625rem;
   width: 100%;
-  font-size: 3.6rem;
+  font-size: 3.8rem;
+  ${breakpoint('md')`
+    font-size: 2.6rem;
+  `}
   line-height: 1.9;
   border-color: transparent;
   background: none;
@@ -67,6 +70,9 @@ const Input = styled.input`
         top: -28px;
       `}
       font-size: 3rem;
+      ${breakpoint('md')`
+        font-size: 2.2rem;
+      `}
       color:#5264AE;
     }
   }
@@ -112,6 +118,9 @@ const Label = styled.label`
   position:absolute;
   color:#999;
   font-size: 3.6rem;
+  ${breakpoint('md')`
+    font-size: 2.6rem;
+  `}
   pointer-events:none;
   left:5px;
   top:10px;

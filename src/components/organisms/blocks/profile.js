@@ -28,9 +28,9 @@ const Section = styled.section`
   ${breakpoint('md')`
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (450px)[2];
-    grid-template-columns: repeat(2, 450px);
-    justify-content: space-between;
+    -ms-grid-columns: (50%)[2];
+    grid-template-columns: repeat(2, 50%);
+    justify-items: center;
   `}
   margin-left: auto;
   margin-right: auto;
@@ -58,6 +58,7 @@ const Article = styled.article`
     margin-top: 30px;
   `}
   ${breakpoint('md')`
+    width: 95%;
     max-width: 450px;
   `}
   background-color: #ffffff;
