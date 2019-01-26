@@ -28,9 +28,9 @@ const Div = styled.div`
 const Form = styled.form`
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: ${VW(20)} ${VW(34)} ${VW(20)} ${VW(20)} ${VW(34)} ${VW(20)} ${VW(20)} ${VW(80)} ${VW(30)} ${VW(40)};
+  grid-template-rows: ${VW(20)} ${VW(36)} ${VW(40)} ${VW(36)} ${VW(40)} ${VW(120)} ${VW(20)} ${VW(80)} ${VW(30)} ${VW(40)};
   ${breakpoint('md')`
-    grid-template-rows: 20px 34px 20px 20px 34px 20px 20px 80px 30px 40px;
+    grid-template-rows: 20px 72px 60px 72px 60px 200px 20px 80px 30px 40px;
   `}
   margin-top: ${VW(30)};
   ${breakpoint('md')`
@@ -42,37 +42,44 @@ const Textfield = styled.div`
   position: relative;
 `
 
-const input = styled.input`
-  box-sizing: border-box;
-  display: block;
+const Input = styled.input`
   padding: 0.125rem 0.125rem 0.0625rem;
   width: 100%;
   font-size: 3.6rem;
   line-height: 1.9;
   border-color: transparent;
   background: none;
-  box-shadow: none;
   border-bottom:1px solid #757575;
   transition: all 0.28s ease;
   &:focus{
     outline: none;
+    & ~ * {
+      &::before, &::after{
+        width: 50%;
+      }
+    }
   }
   &:focus, &:valid{
     ~ label{
       top: ${VW(-20)};
+      ${breakpoint('md')`
+        top: -28px;
+      `}
       font-size: 3rem;
       color:#5264AE;
     }
   }
 `
 
-const InputName = styled(input)`
+const Textarea = styled(Input)`
+  height: 100%;
+  line-height: 1.4;
 `
 
 const Highlight = styled.span`
   position:absolute;
   height:60%;
-  width:100px;
+  width: 100%;
   top:25%;
   left:0;
   pointer-events:none;
@@ -82,7 +89,7 @@ const Highlight = styled.span`
 const Bar = styled.span`
   display:block;
   position:relative;
-  width:300px;
+  width: 100%;
   &::before, &::after{
     content:'';
     height:2px;
@@ -118,10 +125,24 @@ const Contact = () => (
       <Form>
         <div />
         <Textfield>
-          <InputName type="text" name="name" required="required" />
+          <Input type="text" name="name" required="required" />
           <Highlight />
           <Bar />
           <Label>Name*</Label>
+        </Textfield>
+        <div />
+        <Textfield>
+          <Input type="email" name="email" required="required" />
+          <Highlight />
+          <Bar />
+          <Label>Email*</Label>
+        </Textfield>
+        <div />
+        <Textfield>
+          <Textarea as="textarea" row="5" name="text" required="required" />
+          <Highlight />
+          <Bar />
+          <Label>Message*</Label>
         </Textfield>
       </Form>
     </Div>
