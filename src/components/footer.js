@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
+import { Element } from 'react-scroll'
 
 import H3 from './atoms/headline/h3'
 import SNS from './organisms/blocks/sns'
@@ -42,7 +43,7 @@ const Div = styled.div`
 `
 
 const Footer = () => (
-  <React.Fragment>
+  <Element name="contact">
     <Section>
       <Contact />
       <Map />
@@ -52,7 +53,7 @@ const Footer = () => (
       <p>Hencework 2017. All rights reserved.</p>
       <SNS />
     </Div>
-  </React.Fragment>
+  </Element>
 )
 
 export default Footer

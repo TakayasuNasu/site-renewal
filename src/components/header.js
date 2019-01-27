@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
+import { Link } from 'react-scroll'
 
 import H1 from '../components/atoms/headline/h1'
 import ContactButton from '../components/atoms/buttons/contact'
@@ -45,7 +46,9 @@ const Header = () => (
       <NavBlock>
         <AnchorList />
       </NavBlock>
-      <ContactButton>contact</ContactButton>
+      <Link to="contact" smooth={true} duration={1000}>
+        <ContactButton>contact</ContactButton>
+      </Link>
       <MenuButon />
     </HeaderBlock>
   </Wrapper>
