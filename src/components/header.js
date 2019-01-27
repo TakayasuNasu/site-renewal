@@ -5,6 +5,7 @@ import breakpoint from 'styled-components-breakpoint';
 
 import H1 from '../components/atoms/headline/h1'
 import ContactButton from '../components/atoms/buttons/contact'
+import AnchorList from '../components/organisms/nav/anchor-list'
 import MenuButon from '../components/atoms/buttons/menu'
 import { VW } from './style-utils'
 
@@ -29,10 +30,21 @@ const HeaderBlock = styled.header`
   `}
 `
 
+const NavBlock = styled.div`
+  display: none;
+  ${breakpoint('md')`
+    display: block;
+  `}
+  height: 100%;
+`
+
 const Header = () => (
   <Wrapper>
     <HeaderBlock>
       <H1 ps={2.4}>@TakayasuNasu</H1>
+      <NavBlock>
+        <AnchorList />
+      </NavBlock>
       <ContactButton>contact</ContactButton>
       <MenuButon />
     </HeaderBlock>

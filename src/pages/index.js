@@ -1,4 +1,5 @@
 import React from 'react'
+import { Element } from 'react-scroll'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -11,9 +12,15 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <MV />
-    <Skills />
-    <Profile />
-    <Timeline />
+    <Element name="skills">
+      <Skills />
+    </Element>
+    <Element name="profile">
+      <Profile />
+    </Element>
+    <Element name="timeline">
+      <Timeline />
+    </Element>
   </Layout>
 )
 
