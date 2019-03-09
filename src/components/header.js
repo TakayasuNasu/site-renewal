@@ -47,7 +47,7 @@ const Header = () => (
         <AnchorList />
       </NavBlock>
       <Link to="contact" smooth={true} duration={1000}>
-        <ContactButton>contact</ContactButton>
+        <ContactButton internal={true}>contact</ContactButton>
       </Link>
       <MenuButon />
     </HeaderBlock>

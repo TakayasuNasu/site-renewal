@@ -16,6 +16,7 @@ const Anchor = styled.a`
     width: ${props => props.pw || 120}px;
     height: ${props => props.ph || 40}px;
   `}
+  cursor: pointer;
   border-radius: 2px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
   background-color: ${props => props.bg || '#2ecc71'};
@@ -38,6 +39,7 @@ const Paragraph = styled.p`
 
 const ContactButton = props => (
   <Anchor
+    as={props.internal ? 'span' : ''}
     sw={props.sw}
     pc={props.pw}
     sh={props.sh}
