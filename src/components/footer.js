@@ -50,7 +50,7 @@ const Footer = () => (
     </Section>
     <Div>
       <H3>Thank You For Visiting.</H3>
-      <p>Hencework 2017. All rights reserved.</p>
+      <p>TKY {new Date().getFullYear()}. All rights reserved.</p>
       <SNS />
     </Div>
   </Element>
