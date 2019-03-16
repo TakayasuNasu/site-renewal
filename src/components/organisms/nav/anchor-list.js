@@ -21,6 +21,7 @@ const UL = styled.ul`
     height: 100%;
     font-size: 2rem;
     a{
+      color: #898989;
       &:after{
         content: "";
         position: absolute;
