@@ -38,7 +38,11 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "devDependencies": {
-    "prettier": "^1.15.2"
+    "gatsby-plugin-typography": "^2.2.10",
+    "prettier": "^1.15.2",
+    "react-typography": "^0.16.19",
+    "typography": "^0.16.19",
+    "typography-theme-st-annes": "^0.16.19"
   },
   "repository": {
     "type": "git",
