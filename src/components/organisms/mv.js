@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
+import { Link } from 'react-scroll'
+
 import { VW } from '../style-utils'
 import BGS from '../../images/bg/mv_sp.png'
 import BGP from '../../images/bg/mv_pc.png'
@@ -164,7 +166,9 @@ const Container = () => (
     </GridArea>
     <GridArea name='gap04' />
     <GridArea name='contact'>
-      <ContactButton>contact</ContactButton>
+      <Link to="contact" smooth={true} duration={1000}>
+        <ContactButton internal={true}>contact</ContactButton>
+      </Link>
     </GridArea>
     <GridArea name='gap05' />
     <GridArea name='dl'>
