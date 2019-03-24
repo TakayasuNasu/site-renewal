@@ -15,6 +15,7 @@ import DL from '../atoms/list/dl'
 import DT from '../atoms/list/terms'
 import DD from '../atoms/list/description'
 import { Grid, GridArea } from '../atoms/styles'
+import { matchSmartphone, matchTablet } from '../../utils/matchMedia'
 
 const Div = styled.div`
   width: 100%;
@@ -67,10 +68,10 @@ class MV extends Component {
   }
 
   getColumn() {
-    if (window.matchMedia("(max-width:766px)").matches) {
+    if (matchSmartphone()) {
       return ['auto']
     }
-    if (window.matchMedia("(min-width:767px)").matches) {
+    if (matchTablet()) {
       return [
         ['auto'],
         ['auto'],
@@ -79,16 +80,16 @@ class MV extends Component {
   }
 
   getRow() {
-    if (window.matchMedia("(max-width:766px)").matches) {
+    if (matchSmartphone()) {
       return [180, 40, 24, 40, 26, 20, 44, 20, 40, 40, 'auto']
     }
-    if (window.matchMedia("(min-width:767px)").matches) {
+    if (matchTablet()) {
       return ['42px', '40px', '64px', '40px', '40px', '40px', 'auto']
     }
   }
 
   getArea() {
-    if (window.matchMedia("(max-width:766px)").matches) {
+    if (matchSmartphone()) {
       return [
         ['img'],
         ['gap01'],
@@ -103,7 +104,7 @@ class MV extends Component {
         ['dl'],
       ]
     }
-    if (window.matchMedia("(min-width:767px)").matches) {
+    if (matchTablet) {
       return [
         ['img', 'name'],
         ['img', 'gap03'],

@@ -9,8 +9,7 @@ import Skills from '../components/organisms/blocks/skills'
 import Profile from '../components/organisms/blocks/profile'
 import Timeline from '../components/organisms/blocks/timeline'
 
-const IndexPage = data => {
-  console.log(data)
+const IndexPage = () => {
   return (
     <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
@@ -29,17 +28,3 @@ const IndexPage = data => {
 }
 
 export default IndexPage
-
-export const query = graphql`
-{
-  allAirtable(filter: {table: {eq: "Projects"}}) {
-    edges {
-      node {
-        data {
-          name
-        }
-      }
-    }
-  }
-}
-`

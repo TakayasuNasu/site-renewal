@@ -49,13 +49,9 @@ module.exports = {
       resolve: `gatsby-source-airtable`,
       options: {
         apiKey: process.env.AIRTABLE_TOKEN,
-        tables: [
-          {
-            baseId: process.env.AIRTABLE_BASEID,
-            tableName: `Projects`,
-            tableView: `Grid view`,
-          },
-        ],
+        baseId: process.env.AIRTABLE_BASEID,
+        tableName: `Projects`,
+        tableView: `Grid view`,
       },
     },
   ],

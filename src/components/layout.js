@@ -6,6 +6,7 @@ import Header from './header'
 import Footer from './footer'
 import { theme } from './themes'
 import { Grid, GridArea } from './atoms/styles'
+import { matchSmartphone, matchTablet } from '../utils/matchMedia'
 import './layout.css'
 
 const Outer = styled.div`
@@ -32,19 +33,19 @@ class Layout extends Component {
   }
 
   getColumn() {
-    if (window.matchMedia("(max-width:766px)").matches) {
+    if (matchSmartphone()) {
       return ['auto']
     }
-    if (window.matchMedia("(min-width:767px)").matches) {
+    if (matchTablet()) {
       return ['auto']
     }
   }
 
   getRow() {
-    if (window.matchMedia("(max-width:766px)").matches) {
+    if (matchSmartphone()) {
       return [70, 'auto', 'auto']
     }
-    if (window.matchMedia("(min-width:767px)").matches) {
+    if (matchTablet()) {
       return ['70px', 'auto', 'auto']
     }
   }
