@@ -1,5 +1,6 @@
 import React from 'react'
 import { Element } from 'react-scroll'
+import { graphql } from "gatsby"
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -8,8 +9,10 @@ import Skills from '../components/organisms/blocks/skills'
 import Profile from '../components/organisms/blocks/profile'
 import Timeline from '../components/organisms/blocks/timeline'
 
-const IndexPage = () => (
-  <Layout>
+const IndexPage = data => {
+  console.log(data)
+  return (
+    <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <MV />
     <Element name="skills">
@@ -22,6 +25,21 @@ const IndexPage = () => (
       <Timeline />
     </Element>
   </Layout>
-)
+  )
+}
 
 export default IndexPage
+
+export const query = graphql`
+{
+  allAirtable(filter: {table: {eq: "Projects"}}) {
+    edges {
+      node {
+        data {
+          name
+        }
+      }
+    }
+  }
+}
+`

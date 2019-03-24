@@ -1,3 +1,11 @@
+let activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+
+require("dotenv").config({
+  path: `.env.${activeEnv}`,
+})
+
+console.log()
+
 module.exports = {
   siteMetadata: {
     title: `working life history of Takayasu Nasu`,
@@ -35,6 +43,19 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography.js`,
+      },
+    },
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: process.env.AIRTABLE_TOKEN,
+        tables: [
+          {
+            baseId: process.env.AIRTABLE_BASEID,
+            tableName: `Projects`,
+            tableView: `Grid view`,
+          },
+        ],
       },
     },
   ],

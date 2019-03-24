@@ -71,6 +71,9 @@ const Input = styled.input`
       `}
       font-size: 3rem;
       ${breakpoint('md')`
+        font-size: 1.6rem;
+      `}
+      ${breakpoint('lg')`
         font-size: 2.2rem;
       `}
       color:#5264AE;
@@ -119,6 +122,9 @@ const Label = styled.label`
   color:#999;
   font-size: 3.6rem;
   ${breakpoint('md')`
+    font-size: 2.2rem;
+  `}
+  ${breakpoint('lg')`
     font-size: 2.6rem;
   `}
   pointer-events:none;
