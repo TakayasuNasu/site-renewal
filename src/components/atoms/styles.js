@@ -12,12 +12,12 @@ const vw = distance => {
 export const Grid = styled.div`
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: ${({ columns }) => columns.join(" ")};
-  grid-template-columns: ${({ columns }) => columns.join(" ")};
-  -ms-grid-rows: ${({ rows }) => rows.map(vw).join(" ")};
-  grid-template-rows: ${({ rows }) => rows.map(vw).join(" ")};
+  -ms-grid-columns: ${({ columns }) => Array.isArray(columns) ? columns.join(' ') : columns};
+  grid-template-columns: ${({ columns }) => Array.isArray(columns) ? columns.join(' ') : columns};
+  -ms-grid-rows: ${({ rows }) => Array.isArray(rows) ? rows.map(vw).join(' ') : rows};
+  grid-template-rows: ${({ rows }) => Array.isArray(rows) ? rows.map(vw).join(' ') : rows};
   grid-template-areas: ${({ areas }) =>
-    areas.map(r => `'${r.join(" ")}'`).join(" ")};
+    Array.isArray(areas) ? areas.map(r => `'${r.join(' ')}'`).join(' ') : areas};
   width: 100%;
   height: 100%;
 `

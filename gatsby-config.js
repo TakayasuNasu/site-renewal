@@ -4,16 +4,17 @@ require("dotenv").config({
   path: `.env.${activeEnv}`,
 })
 
-console.log()
-
 module.exports = {
   siteMetadata: {
     title: `working life history of Takayasu Nasu`,
     description: `優秀なプログラマ/ソフトウェアエンジニアを募集中でしょうか? Are you looking for an excellent programmer / software engineer?`,
     author: `@TakayasuNasu`,
+    siteUrl: `https://www.i-nasu.com`,
   },
+  assetPrefix: `/assets`,
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -53,6 +54,9 @@ module.exports = {
         tableName: `Projects`,
         tableView: `Grid view`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-no-sourcemaps`,
     },
   ],
 }

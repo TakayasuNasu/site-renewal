@@ -125,7 +125,7 @@ class MV extends Component {
     window.addEventListener('resize', this.styleSetting)
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
     window.removeEventListener('resize', this.styleSetting)
   }
 
