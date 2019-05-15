@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import { VW } from '../../style-utils'
@@ -20,8 +21,21 @@ const Div = styled.div`
   background-position: center center;
 `
 
-const CircleImg = () => (
-  <Div />
-)
+const CircleImg = props => {
+  console.log(props)
+  return <Div />
+}
 
 export default CircleImg
+
+export const query = graphql`
+query {
+  file(relativePath: {eq: "face.jpg"}) {
+    childImageSharp{
+      fixed(width: 200){
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+}
+`

@@ -21,7 +21,7 @@ import SNS from '../components/organisms/blocks/sns'
 import CircleIcon from '../components/atoms/icon/circle'
 import Rectangle from '../components/molecules/panel/rectangle'
 
-const Elements = () => (
+const Elements = props => (
   <Layout>
     <SEO title="Elements page" />
     <WrapperL>
