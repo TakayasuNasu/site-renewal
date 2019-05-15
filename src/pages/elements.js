@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
-import { TiNews, TiDeviceLaptop, TiEdit, TiHtml5 } from "react-icons/ti";
+import { TiNews, TiDeviceLaptop, TiEdit, TiHtml5 } from "react-icons/ti"
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -21,7 +21,7 @@ import SNS from '../components/organisms/blocks/sns'
 import CircleIcon from '../components/atoms/icon/circle'
 import Rectangle from '../components/molecules/panel/rectangle'
 
-const Elements = props => (
+const Elements = () => (
   <Layout>
     <SEO title="Elements page" />
     <WrapperL>
