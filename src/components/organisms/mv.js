@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import BackgroundImage from 'gatsby-background-image'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import { Link } from 'react-scroll'
 
 import { VW } from '../style-utils'
-import BGS from '../../images/bg/mv_sp.png'
-import BGP from '../../images/bg/mv_pc.png'
 import H2 from '../atoms/headline/h2'
 import H3 from '../atoms/headline/h3'
 import CircleImg from '../atoms/img/circle'
@@ -17,15 +17,12 @@ import DD from '../atoms/list/description'
 import { Grid, GridArea } from '../atoms/styles'
 import { matchSmartphone, matchTablet } from '../../utils/matchMedia'
 
-const Div = styled.div`
+const Div = styled(BackgroundImage)`
   width: 100%;
   height: auto;
-  background-image: url(${BGS});
-  ${breakpoint('md')`
-    background-image: url(${BGP});
-  `}
   background-repeat: no-repeat;
   background-size: 100% auto;
+  background-position: top;
 `
 
 const About = styled.div`
@@ -131,17 +128,46 @@ class MV extends Component {
 
   render() {
     return (
-      <Div>
-        <About>
-          <Section
-            as='section'
-            columns={this.state.column}
-            rows={this.state.row}
-            areas={this.state.area}>
-            <Container />
-          </Section>
-        </About>
-      </Div>
+      <StaticQuery
+      query={graphql`
+      query {
+        mv_sp:file(relativePath: {eq: "bg/mv_sp.png"}) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 240)  {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        },
+        mv_pc:file(relativePath: {eq: "bg/mv_pc.png"}) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 240)  {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+      `}
+      render={data => {
+        console.log(matchTablet())
+        const img = matchTablet()? data.mv_pc.childImageSharp.fluid : data.mv_sp.childImageSharp.fluid
+        return (
+        <Div
+          Tag="div"
+          fluid={img}
+        >
+          <About>
+            <Section
+              as='section'
+              columns={this.state.column}
+              rows={this.state.row}
+              areas={this.state.area}>
+              <Container />
+            </Section>
+          </About>
+        </Div>
+        )
+      }}
+      />
     )
   }
 }

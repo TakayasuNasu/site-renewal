@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
-import { TiNews, TiDeviceLaptop, TiEdit, TiHtml5 } from "react-icons/ti"
+import { TiNews, TiDeviceLaptop, TiEdit, TiHtml5 } from 'react-icons/ti'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -20,11 +20,13 @@ import DD from '../components/atoms/list/description'
 import SNS from '../components/organisms/blocks/sns'
 import CircleIcon from '../components/atoms/icon/circle'
 import Rectangle from '../components/molecules/panel/rectangle'
+import Project from '../components/organisms/blocks/projects'
 
 const Elements = () => (
   <Layout>
     <SEO title="Elements page" />
     <WrapperL>
+      <Project />
       <H1 ss={2.2}>H1 @TakayasuNasu</H1>
       <H2>H2 Takayasu Nasu</H2>
       <H3>H3 UI/UX Designer &amp; Front End Developer</H3>
