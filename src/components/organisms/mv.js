@@ -73,6 +73,8 @@ class MV extends Component {
         ['auto'],
         ['auto'],
       ]
+    } else {
+      return ['auto']
     }
   }
 
@@ -82,6 +84,8 @@ class MV extends Component {
     }
     if (matchTablet()) {
       return ['42px', '40px', '64px', '40px', '40px', '40px', 'auto']
+    } else {
+      return [180, 40, 24, 40, 26, 20, 44, 20, 40, 40, 'auto']
     }
   }
 
@@ -101,7 +105,7 @@ class MV extends Component {
         ['dl'],
       ]
     }
-    if (matchTablet) {
+    if (matchTablet()) {
       return [
         ['img', 'name'],
         ['img', 'gap03'],
@@ -110,6 +114,20 @@ class MV extends Component {
         ['img', 'contact'],
         ['gap01', 'gap05'],
         ['sns', 'dl'],
+      ]
+    } else {
+      return [
+        ['img'],
+        ['gap01'],
+        ['sns'],
+        ['gap02'],
+        ['name'],
+        ['gap03'],
+        ['ocupation'],
+        ['gap04'],
+        ['contact'],
+        ['gap05'],
+        ['dl'],
       ]
     }
   }
@@ -148,7 +166,6 @@ class MV extends Component {
       }
       `}
       render={data => {
-        console.log(matchTablet())
         const img = matchTablet()? data.mv_pc.childImageSharp.fluid : data.mv_sp.childImageSharp.fluid
         return (
         <Div
