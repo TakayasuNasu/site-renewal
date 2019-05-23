@@ -38,6 +38,8 @@ class Layout extends Component {
     }
     if (matchTablet()) {
       return ['auto']
+    } else {
+      return ['auto']
     }
   }
 
@@ -47,6 +49,8 @@ class Layout extends Component {
     }
     if (matchTablet()) {
       return ['70px', 'auto', 'auto']
+    } else {
+      return [70, 'auto', 'auto']
     }
   }
 
