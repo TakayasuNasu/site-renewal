@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled, { ThemeProvider } from 'styled-components';
+import breakpoint from 'styled-components-breakpoint'
 
 import Header from './header'
 import Footer from './footer'
 import { theme } from './themes'
-import { Grid, GridArea } from './atoms/styles'
+import { GridArea } from './atoms/styles'
+import { VW } from './style-utils'
 import { matchSmartphone, matchTablet } from '../utils/matchMedia'
 import './layout.css'
 
@@ -21,6 +23,22 @@ Outer.defaultProps = {
     color: '#787878',
   }
 }
+
+const Grid = styled.div`
+  display: -ms-grid;
+  display: grid;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+  grid-template-columns: auto;
+  -ms-grid-rows: ${VW(70)} auto auto;
+  grid-template-rows: ${VW(70)} auto auto;
+  grid-template-areas: 'header' 'body' 'footer';
+  ${breakpoint('md')`
+    -ms-grid-rows: 70px auto auto;
+    grid-template-rows: 70px auto auto;
+  `}
+`
 
 class Layout extends Component {
   constructor(props) {
@@ -58,17 +76,18 @@ class Layout extends Component {
     this.setState({ column: this.getColumn(), row: this.getRow() })
   }
 
+  componentDidMount() {
+    window.addEventListener('resize', this.styleSetting)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.styleSetting)
+  }
+
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <Grid
-          columns={this.state.column}
-          rows={this.state.row}
-          areas={[
-            ['header'],
-            ['body'],
-            ['footer'],
-          ]}>
+        <Grid>
           <GridArea name='header'>
             <Header />
           </GridArea>
