@@ -14,7 +14,7 @@ import ContactButton from '../atoms/buttons/contact'
 import DL from '../atoms/list/dl'
 import DT from '../atoms/list/terms'
 import DD from '../atoms/list/description'
-import { Grid, GridArea } from '../atoms/styles'
+import { GridArea } from '../atoms/styles'
 import { matchSmartphone, matchTablet } from '../../utils/matchMedia'
 
 const Div = styled(BackgroundImage)`
@@ -38,7 +38,23 @@ const About = styled.div`
   `}
 `
 
-const Section = styled(Grid)`
+const Grid = styled.section`
+  display: -ms-grid;
+  display: grid;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+  grid-template-columns: auto;
+  -ms-grid-rows: ${VW(180)} ${VW(40)} ${VW(24)} ${VW(40)} ${VW(26)} ${VW(20)} ${VW(44)} ${VW(20)} ${VW(40)} ${VW(40)} auto;
+  grid-template-rows: ${VW(180)} ${VW(40)} ${VW(24)} ${VW(40)} ${VW(26)} ${VW(20)} ${VW(44)} ${VW(20)} ${VW(40)} ${VW(40)} auto;
+  grid-template-areas: 'img' 'gap01' 'sns' 'gap02' 'name' 'gap03' 'ocupation' 'gap04' 'contact' 'gap05' 'dl';
+  ${breakpoint('md')`
+    -ms-grid-columns: auto auto;
+    grid-template-columns: auto auto;
+    -ms-grid-rows: 42px 40px 64px 40px 40px 40px auto;
+    grid-template-rows: 42px 40px 64px 40px 40px 40px auto;
+    grid-template-areas: 'img name' 'img gap03' 'img ocupation' 'img gap04' 'img contact' 'gap01 gap05' 'sns dl';
+  `}
   padding-top: ${VW(40)};
   padding-bottom: ${VW(40)};
   ${breakpoint('md')`
@@ -152,14 +168,14 @@ class MV extends Component {
         mv_sp:file(relativePath: {eq: "bg/mv_sp.png"}) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 240)  {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         },
         mv_pc:file(relativePath: {eq: "bg/mv_pc.png"}) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 240)  {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -173,13 +189,9 @@ class MV extends Component {
           fluid={img}
         >
           <About>
-            <Section
-              as='section'
-              columns={this.state.column}
-              rows={this.state.row}
-              areas={this.state.area}>
+            <Grid>
               <Container />
-            </Section>
+            </Grid>
           </About>
         </Div>
         )

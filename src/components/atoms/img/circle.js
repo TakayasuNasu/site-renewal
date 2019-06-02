@@ -24,7 +24,7 @@ const Div = ({ className }) => (
         file(relativePath: {eq: "face.jpg"}) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 240)  {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

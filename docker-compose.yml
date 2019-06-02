@@ -2,7 +2,7 @@ version: '2'
 
 services:
   web:
-    image: node:10.9.0-alpine
+    image: node:10.9.0
     container_name: portfolio2019
     volumes:
       - ./:/home/app
