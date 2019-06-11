@@ -31,10 +31,10 @@ const UL = styled.ul`
 
 const SNS = () => (
   <UL>
-    <li><a href='/'><FaFacebook /></a></li>
-    <li><a href='/'><FaTwitter /></a></li>
-    <li><a href='/'><FaLinkedinIn /></a></li>
-    <li><a href='/'><FaGithub /></a></li>
+    <li><a href='https://www.facebook.com/takayasu.nasu.1' target="_blank"><FaFacebook /></a></li>
+    <li><a href='https://twitter.com/taka7beckham' target="_blank"><FaTwitter /></a></li>
+    <li><a href='https://www.linkedin.com/in/takayasu-nasu-b8054413b/' target="_blank"><FaLinkedinIn /></a></li>
+    <li><a href='https://github.com/TakayasuNasu' target="_blank"><FaGithub /></a></li>
   </UL>
 )
 
