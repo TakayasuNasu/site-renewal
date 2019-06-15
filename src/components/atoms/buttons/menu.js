@@ -30,7 +30,7 @@ const Span = styled.span`
     height: 5px;
   `}
   ${share}
-  background: ${props => props.active ? 'transparent' : props.bg || '#00acc1'};
+  background: ${props => props.active ? 'transparent' : props.bg || '#898989'};
   &::before, &::after{
     ${ Pseudo(VW(45), VW(5)) }
     ${share}
@@ -38,7 +38,7 @@ const Span = styled.span`
       width: 45px;
       height: 5px;
     `}
-    background: ${props => props.bg || '#00acc1'};
+    background: ${props => props.bg || '#898989'};
   }
   &::before{
     top: ${props => props.active ? 0 : VW(-10)};

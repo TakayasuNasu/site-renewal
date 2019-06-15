@@ -22,18 +22,10 @@ exports.onPostBuild = async ({ pathPrefix }) => {
       return fs.move(currentPath, newPath)
     }
   }))
-  const staticFolder = "static"
-  const currentStaticPath = path.join(publicFolder, staticFolder)
-  const newStaticPath = path.join(assetFolder, staticFolder)
-  await fs.move(currentStaticPath, newStaticPath)
 
-  const pageDataFolder = "page-data"
-  const currentPageDataPath = path.join(publicFolder, pageDataFolder)
-  const newPageDataPath = path.join(assetFolder, pageDataFolder)
-  await fs.move(currentPageDataPath, newPageDataPath)
-
-  const iconsFolder = "icons"
-  const currentIconsPath = path.join(publicFolder, iconsFolder)
-  const newIconsPath = path.join(assetFolder, iconsFolder)
-  await fs.move(currentIconsPath, newIconsPath)
+  for (const folder of ['static', 'page-data', 'icons']) {
+    const currentPath = path.join(publicFolder, folder)
+    const newPath = path.join(assetFolder, folder)
+    await fs.move(currentPath, newPath)
+  }
 }
