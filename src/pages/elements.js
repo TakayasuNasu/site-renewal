@@ -21,6 +21,9 @@ import SNS from '../components/organisms/blocks/sns'
 import CircleIcon from '../components/atoms/icon/circle'
 import Rectangle from '../components/molecules/panel/rectangle'
 import Project from '../components/organisms/blocks/projects'
+import RightNav from '../components/organisms/nav/right'
+
+import SideMenuStore from '../store/side-menu'
 
 const Elements = () => (
   <Layout>
@@ -42,6 +45,9 @@ const Elements = () => (
         <DD>taka.beckham@gmail.com</DD>
       </DL>
       <Slider trackStyle={{ backgroundColor: 'black' }} handleStyle={{ backgroundColor: 'black', borderColor: 'black' }} />
+      <SideMenuStore>
+        <RightNav />
+      </SideMenuStore>
       <ul>
         <li><CircleIcon><TiNews /></CircleIcon></li>
         <li><CircleIcon><TiDeviceLaptop /></CircleIcon></li>
