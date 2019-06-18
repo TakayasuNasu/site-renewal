@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import { Link } from 'react-scroll'
@@ -6,12 +6,16 @@ import { Link } from 'react-scroll'
 import { SideMenuContext } from '../../../store/side-menu'
 
 const Nav = styled.nav`
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 0;
   margin-left: auto;
   margin-right: 0;
   width: ${props => props.isExpanded? 30:0}vw;
   height: 100vh;
   ${breakpoint('md')`
-    width: 40vw;
+    width: ${props => props.isExpanded? 40:30}vw;
     `}
   background: rgba(0,20,60,.9);
   overflow: hidden;
@@ -19,10 +23,7 @@ const Nav = styled.nav`
 
 const Right = () => {
   const [isExpanded, setExpanded] = useContext(SideMenuContext)
-  console.log(123)
-  useEffect(() => {
-    console.log(isExpanded)
-  })
+  console.log(isExpanded)
   return (
     <Nav isExpanded={isExpanded} onClick={() => setExpanded(false)}>
       <ul>

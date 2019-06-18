@@ -1,7 +1,9 @@
-import React, { Component } from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
+
 import { VW, Pseudo } from '../../style-utils'
+import { SideMenuContext } from '../../../store/side-menu'
 
 const Div = styled.div`
   display: flex;
@@ -56,27 +58,13 @@ const Span = styled.span`
   }
 `
 
-class MenuButon extends Component {
-
-  constructor(props) {
-    super(props)
-    this.state = {
-      active: false,
-    }
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  handleClick() {
-    this.setState({ active: !this.state.active})
-  }
-
-  render() {
-    return (
-      <Div onClick={this.handleClick}>
-        <Span bg={this.props.bg} active={this.state.active} />
-      </Div>
-    )
-  }
+const MenuButon = props => {
+  const [isExpanded, setExpanded] = useContext(SideMenuContext)
+  return (
+    <Div onClick={() => setExpanded(!isExpanded)}>
+      <Span bg={props.bg} active={isExpanded} />
+    </Div>
+  )
 }
 
 export default MenuButon

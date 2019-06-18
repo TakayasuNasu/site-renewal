@@ -11,18 +11,18 @@ import Timeline from '../components/organisms/blocks/timeline'
 const IndexPage = () => {
   return (
     <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <MV />
-    <Element name="skills">
-      <Skills />
-    </Element>
-    <Element name="profile">
-      <Profile />
-    </Element>
-    <Element name="timeline">
-      <Timeline />
-    </Element>
-  </Layout>
+      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <MV />
+      <Element name="skills">
+        <Skills />
+      </Element>
+      <Element name="profile">
+        <Profile />
+      </Element>
+      <Element name="timeline">
+        <Timeline />
+      </Element>
+    </Layout>
   )
 }
 

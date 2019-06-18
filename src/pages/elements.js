@@ -23,8 +23,6 @@ import Rectangle from '../components/molecules/panel/rectangle'
 import Project from '../components/organisms/blocks/projects'
 import RightNav from '../components/organisms/nav/right'
 
-import SideMenuStore from '../store/side-menu'
-
 const Elements = () => (
   <Layout>
     <SEO title="Elements page" />
@@ -45,9 +43,7 @@ const Elements = () => (
         <DD>taka.beckham@gmail.com</DD>
       </DL>
       <Slider trackStyle={{ backgroundColor: 'black' }} handleStyle={{ backgroundColor: 'black', borderColor: 'black' }} />
-      <SideMenuStore>
-        <RightNav />
-      </SideMenuStore>
+      <RightNav />
       <ul>
         <li><CircleIcon><TiNews /></CircleIcon></li>
         <li><CircleIcon><TiDeviceLaptop /></CircleIcon></li>

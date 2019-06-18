@@ -9,6 +9,7 @@ import { theme } from './themes'
 import { GridArea } from './atoms/styles'
 import { VW } from './style-utils'
 import { matchSmartphone, matchTablet } from '../utils/matchMedia'
+import Store from '../store/store'
 import './layout.css'
 
 const Outer = styled.div`
@@ -87,19 +88,21 @@ class Layout extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <Grid>
-          <GridArea name='header'>
-            <Header />
-          </GridArea>
-          <GridArea name='body'>
-            <Outer>
-              {this.props.children}
-            </Outer>
-          </GridArea>
-          <GridArea name='footer'>
-            <Footer />
-          </GridArea>
-        </Grid>
+        <Store>
+          <Grid>
+            <GridArea name='header'>
+              <Header />
+            </GridArea>
+            <GridArea name='body'>
+              <Outer>
+                {this.props.children}
+              </Outer>
+            </GridArea>
+            <GridArea name='footer'>
+              <Footer />
+            </GridArea>
+          </Grid>
+        </Store>
       </ThemeProvider>
     )
   }
