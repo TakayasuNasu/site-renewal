@@ -7,11 +7,13 @@ import MV from '../components/organisms/mv'
 import Skills from '../components/organisms/blocks/skills'
 import Profile from '../components/organisms/blocks/profile'
 import Timeline from '../components/organisms/blocks/timeline'
+import RightNav from '../components/organisms/nav/right'
 
 const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <RightNav />
       <MV />
       <Element name="skills">
         <Skills />

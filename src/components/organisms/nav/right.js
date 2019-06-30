@@ -12,19 +12,23 @@ import SNS from '../blocks/sns'
 import { VW } from '../../style-utils'
 
 const Nav = styled.nav`
-  position: absolute;
+  position: fixed;
   z-index: 10;
+  top: ${VW(70)};;
+  bottom: 0;
   left: 0;
   right: 0;
+  ${breakpoint('md')`
+    top: 70px;
+  `}
+  overflow-y: scroll;
   margin-left: auto;
   margin-right: 0;
   width: ${props => props.isExpanded? 75:0}vw;
-  min-height: 150vh;
   ${breakpoint('md')`
     width: ${props => props.isExpanded? 300:0}px;
   `}
   background-color: rgb(43, 43, 43);
-  overflow: hidden;
   transition: .3s;
 `
 
@@ -33,9 +37,11 @@ const Container = styled.div`
   grid-template-rows: auto ${VW(30)} auto ${VW(30)} auto ${VW(40)} auto ${VW(30)} auto;
   justify-items: center;
   margin-top: ${VW(30)};
+  margin-bottom: ${VW(30)};
   ${breakpoint('md')`
-    margin-top: 30px;
     grid-template-rows: auto 30px auto 30px auto 40px auto 30px auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
   `}
 `
 
