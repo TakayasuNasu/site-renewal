@@ -7,7 +7,7 @@
 // You can delete this file if you're not using it
 export const onClientEntry = () => {
   if (typeof window.IntersectionObserver === `undefined`) {
-    import(`intersection-observer`)
+    // import(`intersection-observer`)
     console.log(`# IntersectionObserver is polyfilled!`)
   }
 }
