@@ -230,7 +230,7 @@ const Container = () => (
     <GridArea name='dl'>
       <DL>
         <DT mtsp={0.1} mtpc='8px'>Address</DT>
-        <DD>Shinjuku, Tokyo</DD>
+        <DD>Broadway Vancouver</DD>
         <DT>Email</DT>
         <DD>taka.beckham@gmail.com</DD>
       </DL>
