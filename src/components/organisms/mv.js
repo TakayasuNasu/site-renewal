@@ -18,7 +18,10 @@ import { GridArea } from '../atoms/styles'
 import { matchSmartphone, matchTablet } from '../../utils/matchMedia'
 
 const Div = styled(BackgroundImage)`
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
+  max-width: 1920px;
   height: auto;
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -174,7 +177,7 @@ class MV extends Component {
         },
         mv_pc:file(relativePath: {eq: "bg/mv_pc.png"}) {
           childImageSharp {
-            fluid(quality: 90, maxWidth: 240)  {
+            fluid(quality: 100, maxWidth: 1920)  {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

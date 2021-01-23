@@ -52,10 +52,12 @@ const CircleImg = styled(Div)`
     width: 240px;
     height: 240px;
   `}
-  border-radius: 50%;
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center center;
+  &::before {
+    border-radius: 50%;
+  }
 `
 
 export default CircleImg

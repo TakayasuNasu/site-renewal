@@ -101,25 +101,25 @@ const Profile = () => (
         <div /><div />
         <FaCode color='#2879ff' />
         <div /><div /><div /><div />
-        <H4 ss={1.8} ps={1.8}>User interface</H4>
+        <H4 ss={1.8} ps={1.8}>Full Stack</H4>
         <div /><div />
-        <p>A mobile first responsive template with material design.</p>
+        <p>i'm familiar with Backend, Frontend, and Mobile programing, also I'm good at creating System Architecture.</p>
       </Article>
       <Article>
         <div /><div />
         <TiDeviceLaptop color='#01c853' />
         <div /><div /><div /><div />
-        <H4 ss={1.8} ps={1.8}>Branding</H4>
+        <H4 ss={1.8} ps={1.8}>Experience</H4>
         <div /><div />
-        <p>A mobile first responsive template with material design.</p>
+        <p>i have experience large and small project. in addition Social game, web application development, landing page coding, and UX/UI.</p>
       </Article>
       <Article>
         <div /><div />
         <TiEdit color='#7C4DFF' />
         <div /><div /><div /><div />
-        <H4 ss={1.8} ps={1.8}>UCommunication</H4>
+        <H4 ss={1.8} ps={1.8}>Ambition</H4>
         <div /><div />
-        <p>A mobile first responsive template with material design.</p>
+        <p>I study myself a new programming language every year. Then I like to incorporate modern technology into my work.</p>
       </Article>
       <Article>
         <div /><div />
@@ -127,7 +127,7 @@ const Profile = () => (
         <div /><div /><div /><div />
         <H4 ss={1.8} ps={1.8}>Strategy</H4>
         <div /><div />
-        <p>A mobile first responsive template with material design.</p>
+        <p>I can select technologies based on the technology level of my team members. I've led many successful projects with my coworker.</p>
       </Article>
     </Section>
   </Wrapper>
