@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
+import axios from 'axios'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import H3 from '../../atoms/headline/h3'
 import H4 from '../../atoms/headline/h4'
-import Submit from '../../atoms/buttons/contact'
 import { VW } from '../../style-utils'
 
 const Section = styled.section`
@@ -133,38 +133,115 @@ const Label = styled.label`
   transition:0.2s ease all;
 `
 
-const Contact = () => (
-  <Section>
-    <H3>Contact</H3>
-    <Div>
-      <H4>Hey There, happy to hear from you.</H4>
-      <Form>
-        <div />
-        <Textfield>
-          <Input type="text" name="name" required="required" />
-          <Highlight />
-          <Bar />
-          <Label>Name*</Label>
-        </Textfield>
-        <div />
-        <Textfield>
-          <Input type="email" name="email" required="required" />
-          <Highlight />
-          <Bar />
-          <Label>Email*</Label>
-        </Textfield>
-        <div />
-        <Textfield>
-          <Textarea as="textarea" row="5" name="text" required="required" />
-          <Highlight />
-          <Bar />
-          <Label>Message*</Label>
-        </Textfield>
-        <div />
-        <Submit pw={90} ph={40} bg="#2879ff">submit</Submit>
-      </Form>
-    </Div>
-  </Section>
-)
+const Button = styled.button`
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto;
+width: 90px;
+font-size: 20px;
+height: 40px;
+color: #ecf0f1;
+border-radius: 2px;
+border: none;
+box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+background-color: #2879ff;
+cursor: ${(props) => props.disabled? `not-allowed`: `pointer`};
+`
+
+class Contact extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      name: '',
+      email: '',
+      message: '',
+      disabled: true
+    }
+    this.nameChange = this.nameChange.bind(this)
+    this.emailChange = this.emailChange.bind(this)
+    this.messageChange = this.messageChange.bind(this)
+    this.postToSlack = this.postToSlack.bind(this)
+    this.subscribeButton = this.subscribeButton.bind(this)
+  }
+
+  nameChange(e) {
+    this.setState({name: e.target.value})
+    this.subscribeButton()
+  }
+
+  emailChange(e) {
+    this.setState({email: e.target.value})
+    this.subscribeButton()
+  }
+
+  messageChange(e) {
+    this.setState({message: e.target.value})
+    this.subscribeButton()
+  }
+
+  subscribeButton() {
+    this.setState({disabled: true})
+    if (!this.state.name) return
+    if (!this.state.email) return
+    if (!this.state.message) return
+    this.setState({disabled: false})
+  }
+
+  async postToSlack() {
+    if (this.state.disabled) return
+    const channel = '@taka'
+    const username = 'slackbot'
+    const text = `${this.state.email} - ${this.state.name}\n${this.state.message}`
+
+    const data = `payload={
+      "channel": "${channel}",
+      "username": "${username}",
+      "text": "${text}"
+    }`
+    await axios.post(`https://hooks.slack.com/services/${process.env.SLACK_TOKEN}`, data)
+      .catch(error => console.error(error))
+      alert('Thank you send me message.')
+      this.setState({name: ''})
+      this.setState({email: ''})
+      this.setState({message: ''})
+  }
+
+  render() {
+    return (
+      <Section>
+        <H3>Contact</H3>
+        <Div>
+          <H4>Hey There, happy to hear from you.</H4>
+          <Form>
+            <div />
+            <Textfield>
+              <Input type="text" name="name" required="required" value={this.state.name} onChange={this.nameChange} />
+              <Highlight />
+              <Bar />
+              <Label>Name*</Label>
+            </Textfield>
+            <div />
+            <Textfield>
+              <Input type="email" name="email" required="required" value={this.state.email} onChange={this.emailChange} />
+              <Highlight />
+              <Bar />
+              <Label>Email*</Label>
+            </Textfield>
+            <div />
+            <Textfield>
+              <Textarea as="textarea" row="5" name="text" required="required" value={this.state.message} onChange={this.messageChange} />
+              <Highlight />
+              <Bar />
+              <Label>Message*</Label>
+            </Textfield>
+            <div />
+            <Button type="button" onClick={() => this.postToSlack()} disabled={this.state.disabled}>submit</Button>
+          </Form>
+        </Div>
+      </Section>
+    )
+  }
+}
 
 export default Contact
